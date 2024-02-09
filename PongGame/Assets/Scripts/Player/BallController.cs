@@ -11,8 +11,11 @@ public class BallController : MonoBehaviour
     [SerializeField]
     private Vector2 startingVelocity = new Vector2(5f, 5f);
 
+    public GameManager gameManager;
+
     public void ResetBall()
     {
+        transform.position = Vector3.zero;
         rb.velocity = startingVelocity;
     }
 
@@ -28,6 +31,18 @@ public class BallController : MonoBehaviour
         if(collision.gameObject.tag=="Player" || collision.gameObject.tag == "Enemy")
         {
             rb.velocity = new Vector2(-rb.velocity.x, rb.velocity.y);
+        }
+
+        if (collision.gameObject.tag == "WallEnemy")
+        {
+            gameManager.ScorePlayer();
+            ResetBall();
+        }
+
+        if (collision.gameObject.tag == "WallPlayer")
+        {
+            gameManager.ScoreEnemy();
+            ResetBall();
         }
     }
 }
