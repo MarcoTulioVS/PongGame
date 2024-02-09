@@ -6,6 +6,8 @@ TagManager:
   tags:
   - Wall
   - Enemy
+  - WallPlayer
+  - WallEnemy
   layers:
   - Default
   - TransparentFX

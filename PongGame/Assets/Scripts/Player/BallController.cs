@@ -7,6 +7,8 @@ public class BallController : MonoBehaviour
     [SerializeField]
     private Rigidbody2D rb;
 
+
+    [SerializeField]
     private Vector2 startingVelocity = new Vector2(5f, 5f);
 
     public void ResetBall()
