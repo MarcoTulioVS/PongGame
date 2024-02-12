@@ -4,9 +4,7 @@ using UnityEngine;
 
 public class EnemyPaddleController : MonoBehaviour
 {
-    //[SerializeField]
-    //private Rigidbody2D rb;
-
+    
     public Vector2 limits = new Vector2(-4.5f, 4.5f);
 
     public float speed;
