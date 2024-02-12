@@ -12,6 +12,7 @@ public class EnemyPaddleController : MonoBehaviour
     public float speed;
 
     public GameObject ball;
+
     void Start()
     {
         
