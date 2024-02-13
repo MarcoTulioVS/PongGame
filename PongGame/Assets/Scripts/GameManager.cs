@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
+using UnityEngine.SceneManagement;
 public class GameManager : MonoBehaviour
 {
     public Transform playerPaddle;
@@ -17,6 +18,8 @@ public class GameManager : MonoBehaviour
 
 
     public int winPoints;
+
+    public GameObject screenEndGame;
 
     void Start()
     {
@@ -42,6 +45,8 @@ public class GameManager : MonoBehaviour
 
         textPointsEnemy.text = enemyScore.ToString();
         textPointsPlayer.text = playerScore.ToString();
+
+        screenEndGame.SetActive(false);
     }
 
     public void ScorePlayer()
@@ -62,8 +67,20 @@ public class GameManager : MonoBehaviour
     {
         if(enemyScore>=winPoints || playerScore >= winPoints)
         {
-            ResetGame();
+            //ResetGame();
+            EndGame();
         }
     }
 
+
+    public void EndGame()
+    {
+        screenEndGame.SetActive(true);
+        Invoke("LoadMenu", 2f);
+    }
+
+    public void LoadMenu()
+    {
+        SceneManager.LoadScene("Menu");
+    }
 }
