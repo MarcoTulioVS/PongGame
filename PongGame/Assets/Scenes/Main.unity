@@ -711,7 +711,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1d27ad9e864d0924c9150042e0c8733e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 5
+  speed: 8
+  movementAxisName: Vertical
 --- !u!1 &881588744
 GameObject:
   m_ObjectHideFlags: 0
@@ -932,7 +933,7 @@ GameObject:
   - component: {fileID: 1100423104}
   - component: {fileID: 1100423106}
   - component: {fileID: 1100423105}
-  - component: {fileID: 1100423107}
+  - component: {fileID: 1100423108}
   m_Layer: 0
   m_Name: EnemyPaddle
   m_TagString: Enemy
@@ -1031,7 +1032,7 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.17, y: 0.15}
   m_EdgeRadius: 0
---- !u!114 &1100423107
+--- !u!114 &1100423108
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -1040,12 +1041,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 1100423103}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6c90e950a57b8cc498eefb60c21ebd8c, type: 3}
+  m_Script: {fileID: 11500000, guid: 1d27ad9e864d0924c9150042e0c8733e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  limits: {x: -4.5, y: 4.5}
-  speed: 5
-  ball: {fileID: 1561913765}
+  speed: 8
+  movementAxisName: Vertical2
 --- !u!1 &1243635314
 GameObject:
   m_ObjectHideFlags: 0
@@ -1663,7 +1663,7 @@ MonoBehaviour:
   enemyScore: 0
   textPointsPlayer: {fileID: 1524304621}
   textPointsEnemy: {fileID: 1243635316}
-  winPoints: 2
+  winPoints: 10
   screenEndGame: {fileID: 325439658}
 --- !u!4 &1808404673
 Transform:

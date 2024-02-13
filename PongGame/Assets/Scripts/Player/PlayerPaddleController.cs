@@ -6,6 +6,8 @@ public class PlayerPaddleController : MonoBehaviour
 {
 
     public float speed;
+
+    public string movementAxisName = "Vertical";
     void Start()
     {
         
@@ -14,7 +16,7 @@ public class PlayerPaddleController : MonoBehaviour
     
     void Update()
     {
-        float moveInput = Input.GetAxis("Vertical");
+        float moveInput = Input.GetAxis(movementAxisName);
 
         Vector3 newPosition = transform.position + Vector3.up * moveInput * speed * Time.deltaTime;
 
