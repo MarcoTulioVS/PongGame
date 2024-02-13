@@ -9,6 +9,15 @@ public class SaveController : MonoBehaviour
 
     private static SaveController _instance;
 
+
+    public string namePlayer;
+    public string nameEnemy;
+
+    public string GetName(bool isPlayer)
+    {
+        return isPlayer ? namePlayer : nameEnemy;
+    }
+
     private void Awake()
     {
         if (_instance != null && _instance!=this)

@@ -21,6 +21,8 @@ public class GameManager : MonoBehaviour
 
     public GameObject screenEndGame;
 
+    public TextMeshProUGUI textEndGame;
+
     void Start()
     {
         ResetGame();
@@ -76,6 +78,7 @@ public class GameManager : MonoBehaviour
     public void EndGame()
     {
         screenEndGame.SetActive(true);
+        textEndGame.text = "Vitória " + SaveController.Instance.GetName(playerScore > enemyScore);
         Invoke("LoadMenu", 2f);
     }
 
