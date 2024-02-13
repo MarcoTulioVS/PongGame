@@ -46,4 +46,12 @@ public class SaveController : MonoBehaviour
             return _instance;
         }
     }
+
+    public void Reset()
+    {
+        nameEnemy = "";
+        namePlayer = "";
+        colorEnemy = Color.white;
+        colorPlayer = Color.white;
+    }
 }
