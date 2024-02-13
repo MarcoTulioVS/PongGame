@@ -8,9 +8,20 @@ public class PlayerPaddleController : MonoBehaviour
     public float speed;
 
     public string movementAxisName = "Vertical";
+
+    public SpriteRenderer spriteRenderer;
+
+    public bool isPlayer = true;
     void Start()
     {
-        
+        if (isPlayer)
+        {
+            spriteRenderer.color = SaveController.Instance.colorPlayer;
+        }
+        else
+        {
+            spriteRenderer.color = SaveController.Instance.colorEnemy;
+        }
     }
 
     

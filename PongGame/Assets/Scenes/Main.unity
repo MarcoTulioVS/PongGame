@@ -713,6 +713,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 8
   movementAxisName: Vertical
+  spriteRenderer: {fileID: 543703192}
+  isPlayer: 1
 --- !u!1 &881588744
 GameObject:
   m_ObjectHideFlags: 0
@@ -1046,6 +1048,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 8
   movementAxisName: Vertical2
+  spriteRenderer: {fileID: 1100423105}
+  isPlayer: 0
 --- !u!1 &1243635314
 GameObject:
   m_ObjectHideFlags: 0
