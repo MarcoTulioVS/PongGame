@@ -78,7 +78,9 @@ public class GameManager : MonoBehaviour
     public void EndGame()
     {
         screenEndGame.SetActive(true);
-        textEndGame.text = "Vitória " + SaveController.Instance.GetName(playerScore > enemyScore);
+        string winner = SaveController.Instance.GetName(playerScore > enemyScore);
+        textEndGame.text = "Vitória " + winner;
+        SaveController.Instance.SaveWinner(winner);
         Invoke("LoadMenu", 2f);
     }
 

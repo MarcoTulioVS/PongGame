@@ -1,7 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+using UnityEngine.SceneManagement;
 public class SaveController : MonoBehaviour
 {
     public Color colorPlayer = Color.white;
@@ -12,6 +12,8 @@ public class SaveController : MonoBehaviour
 
     public string namePlayer;
     public string nameEnemy;
+
+    private string saveWinnerKey = "SavedWinner";
 
     public string GetName(bool isPlayer)
     {
@@ -53,5 +55,21 @@ public class SaveController : MonoBehaviour
         namePlayer = "";
         colorEnemy = Color.white;
         colorPlayer = Color.white;
+    }
+
+    public void SaveWinner(string winner)
+    {
+        PlayerPrefs.SetString(saveWinnerKey, winner);
+    }
+
+    public string GetLastWinner()
+    {
+        return PlayerPrefs.GetString(saveWinnerKey);
+    }
+
+    public void ClearSave()
+    {
+        PlayerPrefs.DeleteAll();
+        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
     }
 }
